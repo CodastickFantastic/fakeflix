@@ -1,0 +1,27 @@
+.topItem{
+    margin-right: 15px;
+    display: flex;
+    flex: 1 1 auto
+}
+
+.topItem > .number{
+    height: 150px;
+    object-fit: contain;
+}
+
+.topItem > .poster{
+    height: 150px;
+    object-fit: contain;
+    margin-left: -5%;
+}
+
+@media(width > 1100px){
+    .topItem > .number{
+        height: 230px;
+    }
+    
+    .topItem > .poster{
+        height: 230px;
+        left: 100px;
+    }
+}

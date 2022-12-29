@@ -1,0 +1,49 @@
+.topViews {
+  width: 100%;
+}
+
+.topViews > h3 {
+  color: white;
+  margin-left: 50px;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px #1c1c1c;
+}
+
+.topViews > .navigation{
+    display: flex;
+}
+
+.navigation > button{
+    width: 150px;
+    opacity: 1;
+    z-index: 99;
+}
+
+.navigation > button:hover{
+    opacity: 1;
+}
+
+.itemHolder {
+  padding: 10px 0 10px 80px;
+  height: 170px;
+  display: flex;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  position: absolute;
+  transition: 0.5s linear;
+}
+
+.itemHolder::-webkit-scrollbar {
+  display: none;
+}
+
+@media(width > 1100px){
+    .topViews > h3{
+        font-size: 1.4rem;
+    }
+
+    .itemHolder {
+        height: 250px;
+    }
+}
