@@ -1,0 +1,65 @@
+.mainNavigationHeader {
+  display: flex;
+  width: 100vw;
+  height: 60px;
+  padding: 20px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.logo {
+  width: 90px;
+  height: 23px;
+  margin: 0 10px 0 30px;
+  object-fit: contain;
+}
+
+.mainMenu {
+  width: 500px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: auto;
+}
+
+.mainMenu > li {
+  list-style: none;
+}
+
+.mainMenu > li > a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.619);
+  text-decoration: none;
+}
+
+.mainMenu > li >a:hover{
+    color: #ffffff72;
+}
+
+.mainMenu > li >a.active{
+    color: #ffffff;
+}
+
+.searchDiv{
+    width: 40px;
+    margin: 0 0 0 auto;
+}
+
+.searchImg{
+    width: 20px;
+}
+
+.profile{
+    width: 30px;
+    margin-right: 30px;
+}
+
+.avatar{
+    width: 30px;
+}
+
+
+

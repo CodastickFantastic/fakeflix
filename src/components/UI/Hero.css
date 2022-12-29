@@ -1,0 +1,105 @@
+.hero{
+    width: 100%;
+    position: relative;
+}
+
+.hero > img{
+    width: 100%;
+    /* object-fit: contain; */
+}
+
+.hero .textContainer{
+    position: absolute;
+    width: 45vw;
+    bottom: 25%;
+    left: 50px;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px #1c1c1c
+}
+
+.hero .heroTitle{
+    font-size: 3rem;
+}
+
+.hero .shortDescription{
+    font-size: 1.2rem;
+}
+
+.heroButtons{
+    display: flex;
+    margin-top: 5px;
+}
+
+.playBtn, .infoBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em 1.2em 0.5em;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    
+}
+
+.playBtn{
+    width: 140px;
+    background-color: #e50914;
+    margin-right: 10px;
+}
+
+.infoBtn{
+    width: 170px;
+    background-color: #666666d6;
+}
+
+
+
+.playBtn > img, .infoBtn > img{
+    height: 25px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.playBtn:hover, .infoBtn:hover{
+    opacity: 0.6;
+}
+
+@media(width < 800px){
+    .hero .textContainer{
+        width: 60vw;
+        text-shadow: 2px 2px #1c1c1c
+    }
+
+    .hero .heroTitle{
+        font-size: 1.5rem;
+    }
+
+    .hero .shortDescription{
+        font-size: 0.8rem;
+    }
+
+    .playBtn, .infoBtn{
+        font-size: 0.6rem;
+        height: 25px;
+    }
+
+    .playBtn{
+        width: 80px;
+    }
+    
+    .infoBtn{
+        width: 100px;
+    }
+
+    .playBtn > img, .infoBtn > img{
+        height: 15px;
+        object-fit: contain;
+        margin-right: 10px;
+    }
+
+}
+
+
