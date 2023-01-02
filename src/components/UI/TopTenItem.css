@@ -1,27 +1,38 @@
 .topItem{
-    margin-right: 15px;
-    display: flex;
-    flex: 1 1 auto
-}
-
-.topItem > .number{
     height: 150px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
     object-fit: contain;
+    position: relative;
 }
 
 .topItem > .poster{
-    height: 150px;
-    object-fit: contain;
-    margin-left: -5%;
+    margin-left: -22px;
+}
+
+.topItem:first-child > .poster{
+    margin-left: -3px;
+}
+
+.topItem:last-child > .poster{
+    margin-left: -60px;
 }
 
 @media(width > 1100px){
-    .topItem > .number{
+    .topItem{
         height: 230px;
     }
-    
+
     .topItem > .poster{
-        height: 230px;
-        left: 100px;
+        margin-left: -35px;
+    }
+    
+    .topItem:first-child > .poster{
+        margin-left: -8px;
+    }
+    
+    .topItem:last-child > .poster{
+        margin-left: -100px;
     }
 }

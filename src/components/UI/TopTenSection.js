@@ -5,8 +5,9 @@ import "./TopTenSection.css";
 
 export default function TopTenSection(props) {
   const [topViwesData, setTopViewsData] = useState([]);
-  const [moveSlider, setMoveSlider] = useState(-2000)
+  const [sliderPosition, setSliderPosition] = useState(0);
 
+  //Fetch data from API
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/trending/${props.media_type}/day?api_key=18f5bf837784bc2be97b452a18de806d`
@@ -25,6 +26,7 @@ export default function TopTenSection(props) {
               place={i + 1}
               poster={newData[i].poster_path}
               id={newData[i].id}
+              mediaType={newData[i].media_type}
             />
           );
           dataArr.push(item);
@@ -34,23 +36,39 @@ export default function TopTenSection(props) {
     }
   }, []);
 
+  //Let slider move
+  let sliderFilling = document.getElementsByClassName("sliderItems");
+  let slider = document.getElementsByClassName("slider");
 
-  let slider = document.getElementsByClassName("itemHolder");
-  function HandleMoveLeft() {
-    if(moveSlider > -2200){
-      setMoveSlider(prevPosition => prevPosition - 1500)
+  function moveLeft() {
+    let maxRange = slider[0].offsetWidth - sliderFilling[0].offsetWidth;
+    if (sliderPosition > maxRange) {
+      setSliderPosition((prevPosition) => prevPosition - (-maxRange/5));
     }
-    console.log(slider)
-    
+    console.log("sliderFiling",sliderFilling)
+    console.log("maxRange",maxRange)
+  }
+
+  function moveRigth() {
+    let maxRange = slider[0].offsetWidth - sliderFilling[0].offsetWidth;
+    if (sliderPosition < 0) {
+      setSliderPosition((prevPosition) => prevPosition - maxRange/5);
+    }
   }
 
   return (
-    <section className="topViews">
+    <section className="topViewSection">
       <h3>Top 10 {props.type} today</h3>
-      <div className="navigation">
-        <button>L</button>
-        <div className="itemHolder" style={{left: moveSlider}}>{topViwesData}</div>
-        <button onClick={HandleMoveLeft}>P</button>
+      <div className="slider">
+        <div className="sliderItems" style={{ left: sliderPosition }}>
+          {topViwesData}
+        </div>
+        <button className="sliderButtonPrev" onClick={moveRigth}>
+          &#9665;
+        </button>
+        <button className="sliderButtonNext" onClick={moveLeft}>
+          &#9655;
+        </button>
       </div>
     </section>
   );

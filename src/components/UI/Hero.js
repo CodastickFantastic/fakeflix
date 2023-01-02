@@ -1,7 +1,7 @@
-import glasonion from "../../img/glasonion.jpg";
 import playIcon from "../../img/play.png";
 import infoIcon from "../../img/info.png";
 import {useState, useEffect} from "react"
+import N from "../../img/n.png"
 
 import "./Hero.css";
 
@@ -21,12 +21,13 @@ export default function Hero(props) {
       }
   }, []);
 
-  console.log("log", heroSection)
+  
 
   return (
     <section className="hero">
       <img src={`https://image.tmdb.org/t/p/original/${heroSection.backdrop_path}`} alt="hero" />
       <div className="textContainer">
+        <div className="mediaType"><img src={N}/>{heroSection.media_type === "tv" ? "SERIES" : "MOVIE"}</div>
         <h2 className="heroTitle">{heroSection.title || heroSection.name}</h2>
         <p className="shortDescription">
           {heroSection.overview}
