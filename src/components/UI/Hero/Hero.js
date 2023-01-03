@@ -1,7 +1,7 @@
-import playIcon from "../../img/play.png";
-import infoIcon from "../../img/info.png";
+import playIcon from "../../../img/icons/play.png";
+import infoIcon from "../../../img/icons/info.png";
 import {useState, useEffect} from "react"
-import N from "../../img/n.png"
+import N from "../../../img/n.png"
 
 import "./Hero.css";
 

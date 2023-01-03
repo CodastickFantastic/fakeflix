@@ -1,15 +1,14 @@
-import Hero from "../components/UI/Hero";
+import Hero from "../components/UI/Hero/Hero";
 import MainContent from "../components/layout/MainContent";
-import TopTenSection from "../components/UI/TopTenSection";
-import Preview from "../components/UI/Preview";
+import TopSlider from "../components/UI/TopSlider/TopSlider";
 
 export default function Home() {
   return (
     <div>
       <Hero media_type="all"/>
       <MainContent>
-        <TopTenSection type="series" media_type="tv" />
-        {/* <Preview /> */}
+        <TopSlider type="series" media_type="tv" />
+        <TopSlider type="movies" media_type="movie" />
       </MainContent>
     </div>
   );

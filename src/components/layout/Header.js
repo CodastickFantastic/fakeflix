@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import logo from "../../img/netflix-logo.png";
-import search from "../../img/search.png";
+import search from "../../img/icons/search.png";
 import avatar from "../../img/avatar-1.jpg";
 
 import "./Header.css";
