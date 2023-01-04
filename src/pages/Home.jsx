@@ -5,7 +5,7 @@ import CasualSlider from "../components/UI/Sliders/CasualSlider";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Hero media_type="all"/>
       <MainContent>
         <TopSlider type="series" media_type="tv" />
@@ -14,6 +14,6 @@ export default function Home() {
         <TopSlider type="movies" media_type="movie" />
         <CasualSlider type="Animate It" genre_id="16" media_type="movie"/>
       </MainContent>
-    </div>
+    </>
   );
 }

@@ -1,0 +1,16 @@
+.moreInfo{
+    height: 100%;
+    width: 100%;
+    background: rgba(116, 116, 116, 0.633);
+    position: fixed;
+    z-index: 5;
+    overflow: auto;
+}
+
+.moreInfo > .infoToShow{
+    margin: auto;
+    width: 70%;
+    height: 200%;
+    background-color: white;
+    z-index: 99;
+}

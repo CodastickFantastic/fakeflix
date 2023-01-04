@@ -25,7 +25,7 @@ export default function Preview(props) {
         <div className="previewHero">
           <img
             className="previewImg"
-            src={data.backdrop_path ? `https://image.tmdb.org/t/p/original${data.backdrop_path}` : netflixPoster}
+            src={data.backdrop_path ? `https://image.tmdb.org/t/p/w500${data.backdrop_path}` : netflixPoster}
           />
           <div className="previewDescription">
             <div className="mediaType">
