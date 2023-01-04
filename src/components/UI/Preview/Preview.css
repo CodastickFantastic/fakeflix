@@ -9,7 +9,7 @@
   position: absolute;
   top: -10px;
   left: -20%;
-  z-index: 99;
+  z-index: 3;
 }
 
 @media (width < 500px){

@@ -6,7 +6,7 @@ import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import "./TopSlider.css";
+import "./Sliders.css";
 
 export default function TopSlider(props) {
   const [topViwesData, setTopViewsData] = useState([]);
@@ -43,7 +43,7 @@ export default function TopSlider(props) {
   }, []);
 
   return (
-    <section className="sliderTopSection">
+    <section className="sliderSection">
       <h3>Top 10 {props.type} today</h3>
       <Swiper
         spaceBetween={50}
