@@ -1,16 +1,60 @@
-.moreInfo{
-    height: 100%;
-    width: 100%;
-    background: rgba(116, 116, 116, 0.633);
-    position: fixed;
-    z-index: 5;
-    overflow: auto;
+.moreInfo {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.781);
+  position: fixed;
+  z-index: 1;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.moreInfo > .infoToShow{
-    margin: auto;
-    width: 70%;
-    height: 200%;
-    background-color: white;
-    z-index: 99;
+.moreInfo > .infoToShow {
+  width: 90%;
+  height: 90%;
+  border-radius: 8px;
+  background-color: #141414;
 }
+
+
+.moreInfo > .infoToShow .moreInfoHero{
+    position: relative;
+    height: 60%;
+}
+
+.moreInfo > .infoToShow .moreInfoHero img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    -webkit-mask-image: linear-gradient(180deg, rgba(20,20,20,1) 70%, rgba(0,0,0,0) 100%);
+}
+
+.moreInfo > .infoToShow .moreInfoHero .moreInfoQuitBtn{
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    background: #141414;
+    color: white;
+    font-size: 18px;
+}
+
+.moreInfo > .infoToShow .moreInfoHero .moreInfoQuitBtn:hover{
+    transform: scale(1.2);
+}
+
+
+
+/* @media (width < 900px) {
+  .moreInfo > .infoToShow{
+    width: 70%;
+  }
+} */

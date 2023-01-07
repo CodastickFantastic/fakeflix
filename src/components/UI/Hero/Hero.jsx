@@ -24,9 +24,11 @@ export default function Hero(props) {
   }, []);
 
   function toggleMoreInfo(event) {
+    event.stopPropagation()
     if (
       event.target.className === "infoBtn" ||
-      event.target.className === "moreInfo"
+      event.target.className === "moreInfo" ||
+      event.target.className === "moreInfoQuitBtn"
     ) {
       setMoreInfo((prev) => !prev);
     }
