@@ -3,24 +3,15 @@ import MainContent from "../components/layout/MainContent/MainContent";
 import TopSlider from "../components/UI/Sliders/TopSlider";
 import CasualSlider from "../components/UI/Sliders/CasualSlider";
 
-import MoviesId from "../assets/MoviesId.json";
 import SeriesId from "../assets/SeriesId.json";
 
-export default function Home() {
+export default function TvSeries() {
 
   function drawSliders() {
     let array = [];
 
-    for (let i = 0; i < 5; i++) {
-      let ranMovieLength = Math.floor(Math.random() * MoviesId.length);
+    for (let i = 0; i < 9; i++) {
       let ranSeriesLength = Math.floor(Math.random() * SeriesId.length);
-      array.push(
-        <CasualSlider
-          type={MoviesId[ranMovieLength].name}
-          genre_id={MoviesId[ranMovieLength].id}
-          media_type="movie"
-        />
-      );
       array.push(
         <CasualSlider
           type={SeriesId[ranSeriesLength].name}
@@ -31,9 +22,7 @@ export default function Home() {
     }
 
     array[Math.floor(Math.random() * array.length)] = <TopSlider type="series" media_type="tv"/>
-    array[Math.floor(Math.random() * array.length)] = <TopSlider type="movies" media_type="movie"/>
-
-
+    
     return array;
   }
 
@@ -41,7 +30,7 @@ export default function Home() {
 
   return (
     <main>
-      <Hero media_type="all" />
+      <Hero media_type="tv" />
       <MainContent>
         {list}
       </MainContent>

@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 
-import netflixPoster from "../../../img/netflix_poster.png";
+//Importing CSS
 import "./MoreInfo.css";
 
+//Importing Images
+import netflixPoster from "../../../img/netflix_poster.png";
+
 export default function MoreInfo(props) {
-  const [data, setData] = useState({});
+  const [data, setData] = useState();
 
   useEffect(() => {
     fetch(
@@ -15,7 +18,9 @@ export default function MoreInfo(props) {
   }, []);
 
   return (
-      <div className="moreInfo" onClick={props.quit}>
+    data && (
+      <div className="moreInfo">
+        <div className="background" onClick={props.quit} />
         <div className="infoToShow">
           <div className="moreInfoHero">
             <img
@@ -25,10 +30,25 @@ export default function MoreInfo(props) {
                   : netflixPoster
               }
             />
-            <button className="moreInfoQuitBtn" onClick={props.quit}>X</button>
+            <button className="moreInfoQuitBtn" onClick={props.quit}>
+              X
+            </button>
+            <h2 className="moreInfoTitle">{data.title || data.name}</h2>
           </div>
-          <div className="moreInfoDescription"></div>
+          <div className="moreInfoDescription">
+            <div className="genreSection">
+              {data.genres.map((genre) => {
+                return (
+                  <p key={Math.random() * 10000000} className="genrePile">
+                    {genre.name}
+                  </p>
+                );
+              })}
+            </div>
+            <p className="description">{data.overview}</p>
+          </div>
         </div>
       </div>
+    )
   );
 }

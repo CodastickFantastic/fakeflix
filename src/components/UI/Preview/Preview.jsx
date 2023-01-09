@@ -1,15 +1,23 @@
+import { useEffect, useState, useContext } from "react";
+import MoreInfoContext from "../../../utility/MoreInfoContext";
+
+//CSS Importing
 import "./Preview.css";
+
+// Icons Importing
 import N from "../../../img/n.png";
 import playBtn from "../../../img/icons/play.png";
 import emptyStar from "../../../img/icons/empty_star.png";
 import fullStar from "../../../img/icons/full_star.png";
 import like from "../../../img/icons/like.png";
-import moreInfo from "../../../img/icons/info.png";
-import netflixPoster from "../../../img/netflix_poster.png"
-import { useEffect, useState } from "react";
+import moreInfoImg from "../../../img/icons/info.png";
+import netflixPoster from "../../../img/netflix_poster.png";
+
 
 export default function Preview(props) {
   const [data, setData] = useState();
+
+  const {displayMoreInfo} = useContext(MoreInfoContext)
 
   useEffect(() => {
     fetch(
@@ -25,7 +33,11 @@ export default function Preview(props) {
         <div className="previewHero">
           <img
             className="previewImg"
-            src={data.backdrop_path ? `https://image.tmdb.org/t/p/w500${data.backdrop_path}` : netflixPoster}
+            src={
+              data.backdrop_path
+                ? `https://image.tmdb.org/t/p/w500${data.backdrop_path}`
+                : netflixPoster
+            }
           />
           <div className="previewDescription">
             <div className="mediaType">
@@ -47,8 +59,8 @@ export default function Preview(props) {
               <img src={like} />
             </button>
           </div>
-          <button className="previewPlay">
-            <img src={moreInfo} />
+          <button className="moreInfoBtn">
+            <img src={moreInfoImg} onClick={() => {displayMoreInfo(props.id,props.mediaType)}} />
           </button>
         </div>
       </div>

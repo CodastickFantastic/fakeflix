@@ -1,70 +1,63 @@
-import playIcon from "../../../img/icons/play.png";
-import infoIcon from "../../../img/icons/info.png";
-import { useState, useEffect } from "react";
-import N from "../../../img/n.png";
-import MoreInfo from "../MoreInfo/MoreInfo";
+import { useState, useEffect, useContext } from "react";
+import MoreInfoContext from "../../../utility/MoreInfoContext";
 
+//Importing CSS
 import "./Hero.css";
 
+//Importing Images
+import playIcon from "../../../img/icons/play.png";
+import infoIcon from "../../../img/icons/info.png";
+import N from "../../../img/n.png";
+
 export default function Hero(props) {
-  const [heroSection, setHeroSection] = useState();
-  const [moreInfo, setMoreInfo] = useState(false);
+  const [data, setData] = useState();
+
+  const { displayMoreInfo } = useContext(MoreInfoContext);
 
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/trending/${props.media_type}/week?api_key=18f5bf837784bc2be97b452a18de806d`
     )
       .then((response) => response.json())
-      .then((data) => setData(data.results));
+      .then((data) => pickRandomData(data.results));
 
-    function setData(data) {
+    function pickRandomData(data) {
       let randomNumber = Math.floor(Math.random() * data.length);
-      setHeroSection(data[randomNumber]);
+      setData(data[randomNumber]);
     }
   }, []);
 
-  function toggleMoreInfo(event) {
-    event.stopPropagation()
-    if (
-      event.target.className === "infoBtn" ||
-      event.target.className === "moreInfo" ||
-      event.target.className === "moreInfoQuitBtn"
-    ) {
-      setMoreInfo((prev) => !prev);
-    }
-  }
-
   return (
-    <>
-      {moreInfo && <MoreInfo id={heroSection.id} quit={toggleMoreInfo} media_type={heroSection.media_type} />}
-      {heroSection && (
-        <section className="hero">
-          <img
-            src={`https://image.tmdb.org/t/p/original/${heroSection.backdrop_path}`}
-            alt="hero"
-          />
-          <div className="textContainer">
-            <div className="mediaType">
-              <img src={N} />
-              {heroSection.media_type === "tv" ? "SERIES" : "MOVIE"}
-            </div>
-            <h2 className="heroTitle">
-              {heroSection.title || heroSection.name}
-            </h2>
-            <p className="shortDescription">{heroSection.overview}</p>
-            <div className="heroButtons">
-              <button className="playBtn">
-                <img src={playIcon} />
-                Play
-              </button>
-              <button className="infoBtn" onClick={toggleMoreInfo}>
-                <img src={infoIcon} />
-                More info
-              </button>
-            </div>
+    data && (
+      <section className="hero">
+        <img
+          src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
+          alt="hero"
+        />
+        <div className="textContainer">
+          <div className="mediaType">
+            <img src={N} />
+            {data.media_type === "tv" ? "SERIES" : "MOVIE"}
           </div>
-        </section>
-      )}
-    </>
+          <h2 className="heroTitle">{data.title || data.name}</h2>
+          <p className="shortDescription">{data.overview}</p>
+          <div className="heroButtons">
+            <button className="playBtn">
+              <img src={playIcon} />
+              Play
+            </button>
+            <button
+              className="infoBtn"
+              onClick={() => {
+                displayMoreInfo(data.id, data.media_type);
+              }}
+            >
+              <img src={infoIcon} />
+              More info
+            </button>
+          </div>
+        </div>
+      </section>
+    )
   );
 }

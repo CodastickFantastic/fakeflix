@@ -1,9 +1,7 @@
 .mainContent {
-  background: linear-gradient(0deg, rgba(20,20,20,1) 98.7%, rgba(113,235,242,0) 100%);;
   margin-top: -13%;
   padding-top: 5%;
   position: relative;
   z-index: 0;
   overflow: hidden;
-  height: 10000px;
 }
