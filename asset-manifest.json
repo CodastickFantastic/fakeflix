@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/fakeflix/static/css/main.c46f7b9c.css",
-    "main.js": "/fakeflix/static/js/main.9169fc01.js",
+    "main.css": "/fakeflix/static/css/main.f5a9e639.css",
+    "main.js": "/fakeflix/static/js/main.2783a29d.js",
     "static/media/n.png": "/fakeflix/static/media/n.d8a9b6b9b632e426b6a9.png",
     "static/media/8.png": "/fakeflix/static/media/8.2affd9a99c6e877c6473.png",
     "static/media/9.png": "/fakeflix/static/media/9.975f873cbc21b54400e0.png",
@@ -10,11 +10,11 @@
     "static/media/3.png": "/fakeflix/static/media/3.965e1aaa1c8e68fe5d1a.png",
     "static/media/5.png": "/fakeflix/static/media/5.65f85b92cc555367a3b1.png",
     "index.html": "/fakeflix/index.html",
-    "main.c46f7b9c.css.map": "/fakeflix/static/css/main.c46f7b9c.css.map",
-    "main.9169fc01.js.map": "/fakeflix/static/js/main.9169fc01.js.map"
+    "main.f5a9e639.css.map": "/fakeflix/static/css/main.f5a9e639.css.map",
+    "main.2783a29d.js.map": "/fakeflix/static/js/main.2783a29d.js.map"
   },
   "entrypoints": [
-    "static/css/main.c46f7b9c.css",
-    "static/js/main.9169fc01.js"
+    "static/css/main.f5a9e639.css",
+    "static/js/main.2783a29d.js"
   ]
 }
