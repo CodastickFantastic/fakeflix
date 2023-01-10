@@ -7,7 +7,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 20, 20, 1) 10%,
+    rgba(113, 235, 242, 0) 100%
+  );
 }
 
 .logo {
@@ -32,34 +37,52 @@
   font-size: 0.9rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.619);
+  text-shadow: 1px 1px #1c1c1c;
   text-decoration: none;
 }
 
-.mainMenu > li >a:hover{
-    color: #ffffff72;
+.mainMenu > li > a:hover {
+  color: #ffffff72;
 }
 
-.mainMenu > li >a.active{
-    color: #ffffff;
+.mainMenu > li > a.active {
+  color: #ffffff;
+  border-bottom: 2px solid white;
 }
 
-.searchDiv{
-    width: 40px;
-    margin: 0 0 0 auto;
+.searchDiv {
+  margin: 0 10px 0 auto;
+  display: flex;
+  cursor: pointer;
 }
 
-.searchImg{
-    width: 20px;
+.searchDiv > .searchFor {
+  background: #141414;
+  outline: none;
+  border: none;
+  text-align: center;
+  border-radius: 20px;
+  margin: 0 5px;
+  width: 0;
+  transition: 0.4s linear;
+  color: white;
 }
 
-.profile{
-    width: 30px;
-    margin-right: 30px;
+.searchDiv > .searchFor.active {
+  width: 200px;
+  border: 1px solid white;
+  transition: 0.4s linear;
 }
 
-.avatar{
-    width: 30px;
+.searchImg {
+  width: 20px;
 }
 
+.profile {
+  width: 30px;
+  margin-right: 30px;
+}
 
-
+.avatar {
+  width: 30px;
+}

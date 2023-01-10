@@ -18,7 +18,7 @@
 }
 
 .sliderSection > .swiper > div[class*="button"]{
-  height: 75%;
+  height: 80%;
   width: 50px;
   top: 1.3em;
   margin: 0;
@@ -39,7 +39,7 @@
 }
 
 .sliderSection > .swiper > div[class*="button"]:hover{
-  background-color: rgba(74, 74, 74, 0.62);
+  background-color: rgba(74, 74, 74, 0.715);
 }
 
 

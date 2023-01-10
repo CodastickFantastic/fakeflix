@@ -19,6 +19,7 @@ export default function Home() {
           type={MoviesId[ranMovieLength].name}
           genre_id={MoviesId[ranMovieLength].id}
           media_type="movie"
+          key={Math.floor(Math.random() * 1000000000000)}
         />
       );
       array.push(
@@ -26,12 +27,13 @@ export default function Home() {
           type={SeriesId[ranSeriesLength].name}
           genre_id={SeriesId[ranSeriesLength].id}
           media_type="tv"
+          key={Math.floor(Math.random() * 1000000000000)}
         />
       );
     }
 
-    array[Math.floor(Math.random() * array.length)] = <TopSlider type="series" media_type="tv"/>
-    array[Math.floor(Math.random() * array.length)] = <TopSlider type="movies" media_type="movie"/>
+    array[Math.floor(Math.random() * array.length)] = <TopSlider type="series" media_type="tv" key={Math.floor(Math.random() * 1000000000000)}/>
+    array[Math.floor(Math.random() * array.length)] = <TopSlider type="movies" media_type="movie" key={Math.floor(Math.random() * 1000000000000)}/>
 
 
     return array;

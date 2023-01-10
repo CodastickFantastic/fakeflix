@@ -17,11 +17,12 @@ export default function TvSeries() {
           type={SeriesId[ranSeriesLength].name}
           genre_id={SeriesId[ranSeriesLength].id}
           media_type="tv"
+          key={Math.floor(Math.random() * 1000000000000)}
         />
       );
     }
 
-    array[Math.floor(Math.random() * array.length)] = <TopSlider type="series" media_type="tv"/>
+    array[Math.floor(Math.random() * array.length)] = <TopSlider type="series" media_type="tv" key={Math.floor(Math.random() * 1000000000000)}/>
     
     return array;
   }
