@@ -12,7 +12,7 @@ function App() {
       <Header />
       <MoreInfoProvider>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/fakeflix" element={<Home />} />
           <Route path="/series" element={<TvSeries />} />
         </Routes>
       </MoreInfoProvider>

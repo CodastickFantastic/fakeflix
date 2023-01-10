@@ -13,7 +13,7 @@ export default function Header() {
       <nav>
         <ul className="mainMenu">
           <li>
-            <Link className="active" to="/">Home</Link>
+            <Link className="active" to="/fakeflix">Home</Link>
           </li>
           <li>
             <Link to="/series">TV Series</Link>
