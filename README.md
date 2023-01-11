@@ -20,3 +20,4 @@ When I started this project I completely didn't know how to work with React, but
 Deal with some responsiveness bugs. 
 
 
+Ps. Do not refresh the demo page as it's hosted at Github Pages and will ends up with 404 error - page not found.
