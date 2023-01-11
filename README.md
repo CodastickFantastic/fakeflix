@@ -20,8 +20,8 @@ When I started this project I completely didn't know how to work with React, but
  * Search
  * Favourites
  * Randomly Generated:
-  *Hero
-  *Sections
+  * Hero
+  * Sections
  * Preview
   
 ## TO DO: 
