@@ -16,8 +16,20 @@ When I started this project I completely didn't know how to work with React, but
   * SliderJS - Library for infinity slider effect
   * The Movie Data Base API - Movies data 
   
+## Features
+ * Search
+ * Favourites
+ * Randomly Generated:
+  *Hero
+  *Sections
+ * Preview
+  
 ## TO DO: 
 Deal with some responsiveness bugs. 
+
+## Screenshots
+![Netflix Main](https://user-images.githubusercontent.com/118989184/211871730-5469adac-c262-44c6-adf8-59f49d6aa711.jpg)
+![Netflix 2](https://user-images.githubusercontent.com/118989184/211871738-11f66366-a720-40af-8697-1d28e2ffc2b1.jpg)
 
 
 Ps. Do not refresh the demo page as it's hosted at Github Pages and will ends up with 404 error - page not found.
