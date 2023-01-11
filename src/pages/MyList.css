@@ -1,0 +1,14 @@
+.myList{
+    padding: 5em;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    z-index: 0;
+    position: absolute;
+}
+
+.myList > .itemTile:hover{
+    z-index: 5;
+}

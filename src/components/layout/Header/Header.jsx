@@ -7,9 +7,15 @@ import avatar from "../../../img/avatar-1.jpg";
 import "./Header.css";
 import { useContext, useEffect, useState } from "react";
 import SearchContext from "../../../utility/SearchContext";
+import FavouriteContext from "../../../utility/FavouriteContext";
 
 export default function Header() {
 
+  //My List Handling
+  const {favourites} = useContext(FavouriteContext)
+
+
+  //Search Event Handling
   const {toggleSearchSection, setSearchData, searchData} = useContext(SearchContext)
 
   function handleSearch(event) {
@@ -60,7 +66,7 @@ export default function Header() {
           </li>
           <li>
             <Link className="menuItem" to="/my-list">
-              My List
+              My List{favourites != 0 && ` ( ${favourites.length} )`}
             </Link>
           </li>
         </ul>

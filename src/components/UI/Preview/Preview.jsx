@@ -9,15 +9,15 @@ import N from "../../../img/n.png";
 import playBtn from "../../../img/icons/play.png";
 import emptyStar from "../../../img/icons/empty_star.png";
 import fullStar from "../../../img/icons/full_star.png";
-import like from "../../../img/icons/like.png";
 import moreInfoImg from "../../../img/icons/info.png";
 import netflixPoster from "../../../img/netflix_poster.png";
-
+import FavouriteContext from "../../../utility/FavouriteContext";
 
 export default function Preview(props) {
   const [data, setData] = useState();
 
-  const {displayMoreInfo} = useContext(MoreInfoContext)
+  const { displayMoreInfo } = useContext(MoreInfoContext);
+  const { addToFav, checkIsFav, removeFav } = useContext(FavouriteContext);
 
   useEffect(() => {
     fetch(
@@ -53,14 +53,20 @@ export default function Preview(props) {
               <img src={playBtn} />
             </button>
             <button className="previwFavourite">
-              <img src={emptyStar} />
-            </button>
-            <button className="previewShowMore">
-              <img src={like} />
+              {checkIsFav(props.id) ? (
+                <img src={fullStar} onClick={() => removeFav(props.id, props.mediaType)} />
+              ) : (
+                <img src={emptyStar} onClick={() => addToFav(props.id, props.mediaType)} />
+              )}
             </button>
           </div>
           <button className="moreInfoBtn">
-            <img src={moreInfoImg} onClick={() => {displayMoreInfo(props.id,props.mediaType)}} />
+            <img
+              src={moreInfoImg}
+              onClick={() => {
+                displayMoreInfo(props.id, props.mediaType);
+              }}
+            />
           </button>
         </div>
       </div>

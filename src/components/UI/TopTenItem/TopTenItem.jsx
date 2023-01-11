@@ -5,11 +5,6 @@ import { useEffect, useState } from "react";
 export default function TopTenItem(props) {
   const [preview, setPreview] = useState();
 
-  
-  useEffect(()=>{
-
-  },[])
-
   function showPreview() {
     setPreview(true);
   }
