@@ -17,12 +17,12 @@ When I started this project I completely didn't know how to work with React, but
   * The Movie Data Base API - Movies data 
   
 ## Features
- * Search
- * Favourites
- * Randomly Generated:
-  * Hero
-  * Sections
- * Preview
+  * Search
+  * Favourites
+  * Randomly Generated:
+   * Hero
+   * Sections
+  * Preview
   
 ## TO DO: 
 Deal with some responsiveness bugs. 
