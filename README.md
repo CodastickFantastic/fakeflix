@@ -21,3 +21,4 @@ Deal with some responsiveness bugs.
 
 
 Ps. Do not refresh the demo page as it's hosted at Github Pages and will ends up with 404 error - page not found.
+Ps2. As every slider category is generated randomly, sometimes it occurs in same slider category in a row, as there is only 18 categories. 
