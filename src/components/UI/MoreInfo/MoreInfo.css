@@ -99,3 +99,10 @@
     width: 90%;
   }
 }
+
+@media (width < 940px){
+  .moreInfo > .infoToShow{
+    margin-bottom: 150px;
+    height: 70%;
+  }
+}

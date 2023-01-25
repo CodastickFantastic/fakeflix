@@ -15,10 +15,11 @@
 
 .searchSection > .searchContainer {
   height: 100%;
-  margin-top: 90px;
+  margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  overflow-x: auto;
 }
 
 .searchSection > .searchContainer > .itemTile {
@@ -30,6 +31,12 @@
 }
 
 @media (width < 940px) {
+
+  .searchSection > .searchContainer{
+    margin-top: 40px;
+    margin-bottom: 150px;
+  }
+
   .searchSection > .searchContainer > .itemTile > .itemPreview{
     width: 400px;
     height: 200px;
