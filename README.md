@@ -23,9 +23,6 @@ When I started this project I completely didn't know how to work with React, but
     * Hero
     * Sections
   * Preview
-  
-## TO DO: 
-Deal with some responsiveness bugs. 
 
 ## Screenshots
 ![Netflix Main](https://user-images.githubusercontent.com/118989184/211871730-5469adac-c262-44c6-adf8-59f49d6aa711.jpg)
