@@ -4,7 +4,7 @@ import SearchSection from "../components/UI/SearchSection/SearchSection";
 const SearchContext = createContext()
 
 export function SearchContextProvider(props) {
-    const [searchFor, setSearchFor] = useState(false)
+    const [searchFor, setSearchFor] = useState("")
     const [searchData, setSearchData] = useState("");
 
     function toggleSearchSection(){

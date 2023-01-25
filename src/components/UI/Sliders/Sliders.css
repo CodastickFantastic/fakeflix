@@ -42,6 +42,12 @@
   background-color: rgba(74, 74, 74, 0.715);
 }
 
+@media(width < 600px){
+  .sliderSection > .swiper > div[class*="button"]{
+    display: none;
+  }
+}
+
 
 
 

@@ -1,4 +1,5 @@
-.mainNavigationHeader {
+/* Desktop Heder Styling */
+.desktopHeder {
   display: flex;
   width: 100vw;
   height: 60px;
@@ -15,25 +16,29 @@
   );
 }
 
-.logo {
+.desktopHeder .logo {
   width: 90px;
   height: 23px;
   margin: 0 10px 0 30px;
   object-fit: contain;
 }
 
-.mainMenu {
+.desktopHeder .showMenu{
+  display: none;
+}
+
+.desktopHeder .mainMenu {
   width: 500px;
   display: flex;
   justify-content: space-evenly;
   margin-right: auto;
 }
 
-.mainMenu > li {
+.desktopHeder .mainMenu > li {
   list-style: none;
 }
 
-.mainMenu > li > a {
+.desktopHeder .mainMenu > li > a {
   font-size: 0.9rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.619);
@@ -41,22 +46,22 @@
   text-decoration: none;
 }
 
-.mainMenu > li > a:hover {
+.desktopHeder .mainMenu > li > a:hover {
   color: #ffffff72;
 }
 
-.mainMenu > li > a.active {
+.desktopHeder .mainMenu > li > a.active {
   color: #ffffff;
   border-bottom: 2px solid white;
 }
 
-.searchDiv {
+.desktopHeder .searchDiv {
   margin: 0 10px 0 auto;
   display: flex;
   cursor: pointer;
 }
 
-.searchDiv > .searchFor {
+.desktopHeder .searchDiv > .searchFor {
   background: #141414;
   outline: none;
   border: none;
@@ -68,21 +73,103 @@
   color: white;
 }
 
-.searchDiv > .searchFor.active {
+.desktopHeder .searchDiv > .searchFor.active {
   width: 200px;
   border: 1px solid white;
   transition: 0.4s linear;
 }
 
-.searchImg {
+.desktopHeder .searchImg {
   width: 20px;
 }
 
-.profile {
+.desktopHeder .profile {
   width: 30px;
   margin-right: 30px;
 }
 
-.avatar {
+.desktopHeder .avatar {
   width: 30px;
 }
+
+/* Mobile Heder Styling */
+
+.mobileHeder{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background-color: #1c1c1c;
+}
+
+.mobileHeder .logo{
+  width: 120px;
+  margin-top: 10px;
+}
+
+.mobileHeder .showMenu{
+  width: 40px;
+  margin-top: 10px;
+}
+
+.mobileHeder nav{
+  display: none;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.mobileHeder nav.active{
+  display: block;
+}
+
+.mobileHeder nav ul li{
+  margin: 5px 0;
+}
+
+.mobileHeder nav ul li a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  
+}
+
+.mobileHeder .searchDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  width: 90%;
+}
+
+.mobileHeder .searchDiv .searchImg{
+  width: 40px;
+}
+
+.mobileHeder .searchDiv .searchFor{
+  height: 0;
+  width: 100%;
+  border: none;
+  transition: 0.2s linear;
+  text-align: center;
+}
+
+.mobileHeder .searchDiv .searchFor.active{
+  height: 50px;
+  width: 100%;
+}
+
+
+.mobileHeder .avatar{
+  display: none;
+}
+
+

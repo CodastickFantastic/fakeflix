@@ -59,7 +59,8 @@ export default function TopSlider(props) {
           1400:{slidesPerView:6, slidesOffsetBefore: 70 ,centeredSlides: false},
           1100:{slidesPerView:5, slidesOffsetBefore: 70, centeredSlides: false},
           850:{slidesPerView:4, slidesOffsetBefore: 60, centeredSlides: false},
-          600:{slidesPerView:3, slidesOffsetBefore: 50, centeredSlides: false}
+          600:{slidesPerView:3, slidesOffsetBefore: 50, centeredSlides: false},
+          100:{slidesPerView: 2, allowTouchMove: true, spaceBetween: 100,  slidesOffsetBefore: -20}
           }}
       >
         {topViwesData}

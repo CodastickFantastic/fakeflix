@@ -10,6 +10,7 @@ import {FavouriteProvider} from "./utility/FavouriteContext";
 import { MoreInfoProvider } from "./utility/MoreInfoContext";
 import { SearchContextProvider } from "./utility/SearchContext";
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -17,12 +18,14 @@ function App() {
         <MoreInfoProvider>
           <SearchContextProvider>
             <Header />
+            <div className="isMobile">
             <Routes>
               <Route path="/fakeflix" element={<Home />} />
               <Route path="/series" element={<TvSeries />} />
               <Route path="/movies" element={<Movies />} />
               <Route path="/my-list" element={<MyList />} />
             </Routes>
+            </div>   
           </SearchContextProvider>
         </MoreInfoProvider>
       </FavouriteProvider>

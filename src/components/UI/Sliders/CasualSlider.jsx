@@ -65,12 +65,13 @@ export default function CasualSlider(props) {
             600: {
               slidesPerView: 2,
               slidesOffsetBefore: 50,
-              centeredSlides: false,
-            },
-            300:{
-              slidesPerView: 2,
               centeredSlides: true,
-              allowTouchMove: true
+            },
+            100:{
+              slidesPerView: 2,
+              slidesOffsetBefore: -40,
+              centeredSlides: true,
+              allowTouchMove: true,
             }
           }}
         >

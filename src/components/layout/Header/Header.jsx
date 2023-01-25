@@ -42,12 +42,35 @@ export default function Header() {
       searchInput.classList.toggle("active");
       toggleSearchSection()
     });
+
+      handleNavbarResponsive()
+
+    window.addEventListener("resize", () =>{
+      handleNavbarResponsive()
+    })
   }, []);
 
+// Handling Navbar Responsivnes
+  const [mobileNav, setMobileNav] = useState(false)
+  const [showMenu, setShowMenu] = useState(false)
+
+  function handleNavbarResponsive(){
+    if(window.innerWidth < 940){
+      setMobileNav(true)
+    } else {
+      setMobileNav(false)
+    }
+  }
+
+  function handleShowMenu(){
+    setShowMenu(prev => !prev)
+  }
+
   return (
-    <header className="mainNavigationHeader">
+    <header className={mobileNav ? "mobileHeder" : "desktopHeder"}>
       <img className="logo" src={logo} alt="FakeFlix Logo" />
-      <nav>
+      <img className="showMenu" src={require("../../../img/icons/menu.png")} alt="show menu" onClick={handleShowMenu}/>
+      <nav className={(mobileNav && showMenu) ? "active" : ""}>
         <ul className="mainMenu">
           <li>
             <Link className="menuItem active" to="/fakeflix">
@@ -66,7 +89,7 @@ export default function Header() {
           </li>
           <li>
             <Link className="menuItem" to="/my-list">
-              My List{favourites != 0 && ` ( ${favourites.length} )`}
+              My List{favourites !== 0 && ` ( ${favourites.length} )`}
             </Link>
           </li>
         </ul>
