@@ -6,7 +6,6 @@ import CasualSlider from "../components/UI/Sliders/CasualSlider";
 import SeriesId from "../assets/SeriesId.json";
 
 export default function TvSeries() {
-
   function drawSliders() {
     let array = [];
 
@@ -22,8 +21,14 @@ export default function TvSeries() {
       );
     }
 
-    array[Math.floor(Math.random() * array.length)] = <TopSlider type="series" media_type="tv" key={Math.floor(Math.random() * 1000000000000)}/>
-    
+    array[Math.floor(Math.random() * array.length)] = (
+      <TopSlider
+        type="series"
+        media_type="tv"
+        key={Math.floor(Math.random() * 1000000000000)}
+      />
+    );
+
     return array;
   }
 
@@ -32,9 +37,7 @@ export default function TvSeries() {
   return (
     <main>
       <Hero media_type="tv" />
-      <MainContent>
-        {list}
-      </MainContent>
+      <MainContent>{list}</MainContent>
     </main>
   );
 }

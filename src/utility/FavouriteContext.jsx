@@ -8,28 +8,28 @@ export function FavouriteProvider(props) {
   function addToFav(id, mediaType) {
     if (checkIsFav(id) === false) {
       setFavourites((prevFav) => {
-        return [...prevFav, {id: id, mediaType: mediaType}];
+        return [...prevFav, { id: id, mediaType: mediaType }];
       });
     }
   }
 
   function checkIsFav(id) {
-    if(favourites.find(e => e.id === id)){
-      return true
+    if (favourites.find((e) => e.id === id)) {
+      return true;
     } else {
-      return false
+      return false;
     }
   }
 
   function removeFav(id, mediaType) {
     setFavourites((prevFav) => {
-      let newArr= []
-      for(let i = 0; i < prevFav.length; i++){
-        if(id != prevFav[i].id){
-          newArr.push(prevFav[i])
+      let newArr = [];
+      for (let i = 0; i < prevFav.length; i++) {
+        if (id != prevFav[i].id) {
+          newArr.push(prevFav[i]);
         }
       }
-      return newArr
+      return newArr;
     });
   }
 

@@ -23,7 +23,7 @@
   object-fit: contain;
 }
 
-.desktopHeder .showMenu{
+.desktopHeder .showMenu {
   display: none;
 }
 
@@ -94,14 +94,12 @@
 
 /* Mobile Heder Styling */
 
-.mobileHeder{
+.mobileHeder {
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-
 
   position: fixed;
   top: 0;
@@ -110,36 +108,35 @@
   background-color: #1c1c1c;
 }
 
-.mobileHeder .logo{
+.mobileHeder .logo {
   width: 120px;
   margin-top: 10px;
 }
 
-.mobileHeder .showMenu{
+.mobileHeder .showMenu {
   width: 40px;
   margin-top: 10px;
 }
 
-.mobileHeder nav{
+.mobileHeder nav {
   display: none;
   text-align: center;
   width: 100%;
   margin-top: 10px;
 }
 
-.mobileHeder nav.active{
+.mobileHeder nav.active {
   display: block;
 }
 
-.mobileHeder nav ul li{
+.mobileHeder nav ul li {
   margin: 5px 0;
 }
 
-.mobileHeder nav ul li a{
+.mobileHeder nav ul li a {
   text-decoration: none;
   color: white;
   font-size: 1.2rem;
-  
 }
 
 .mobileHeder .searchDiv {
@@ -150,11 +147,11 @@
   width: 90%;
 }
 
-.mobileHeder .searchDiv .searchImg{
+.mobileHeder .searchDiv .searchImg {
   width: 40px;
 }
 
-.mobileHeder .searchDiv .searchFor{
+.mobileHeder .searchDiv .searchFor {
   height: 0;
   width: 100%;
   border: none;
@@ -162,14 +159,11 @@
   text-align: center;
 }
 
-.mobileHeder .searchDiv .searchFor.active{
+.mobileHeder .searchDiv .searchFor.active {
   height: 50px;
   width: 100%;
 }
 
-
-.mobileHeder .avatar{
+.mobileHeder .avatar {
   display: none;
 }
-
-

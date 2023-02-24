@@ -6,10 +6,9 @@ import Header from "./components/layout/Header/Header";
 import Movies from "./pages/Movies";
 import MyList from "./pages/MyList";
 
-import {FavouriteProvider} from "./utility/FavouriteContext";
+import { FavouriteProvider } from "./utility/FavouriteContext";
 import { MoreInfoProvider } from "./utility/MoreInfoContext";
 import { SearchContextProvider } from "./utility/SearchContext";
-
 
 function App() {
   return (
@@ -19,13 +18,13 @@ function App() {
           <SearchContextProvider>
             <Header />
             <div className="isMobile">
-            <Routes>
-              <Route path="/fakeflix" element={<Home />} />
-              <Route path="/series" element={<TvSeries />} />
-              <Route path="/movies" element={<Movies />} />
-              <Route path="/my-list" element={<MyList />} />
-            </Routes>
-            </div>   
+              <Routes>
+                <Route path="/fakeflix" element={<Home />} />
+                <Route path="/series" element={<TvSeries />} />
+                <Route path="/movies" element={<Movies />} />
+                <Route path="/my-list" element={<MyList />} />
+              </Routes>
+            </div>
           </SearchContextProvider>
         </MoreInfoProvider>
       </FavouriteProvider>

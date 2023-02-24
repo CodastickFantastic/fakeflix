@@ -67,12 +67,12 @@ export default function CasualSlider(props) {
               slidesOffsetBefore: 50,
               centeredSlides: true,
             },
-            100:{
+            100: {
               slidesPerView: 2,
               slidesOffsetBefore: -40,
               centeredSlides: true,
               allowTouchMove: true,
-            }
+            },
           }}
         >
           {data}

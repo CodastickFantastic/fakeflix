@@ -52,29 +52,29 @@
 }
 
 @media (width < 580px) {
-    .itemTile {
-      transform: scale(0.93);
-    }
-  
-    .itemTile > .itemPreview {
-      transform: scale(0.93);
-    }
-  
-    .itemTile:hover {
-      transform: scale(1.2);
-    }
+  .itemTile {
+    transform: scale(0.93);
+  }
+
+  .itemTile > .itemPreview {
+    transform: scale(0.93);
+  }
+
+  .itemTile:hover {
+    transform: scale(1.2);
+  }
 }
 
 @media (width < 480px) {
-    .itemTile {
-      transform: scale(0.85);
-    }
-  
-    .itemTile > .itemPreview {
-      transform: scale(0.75)
-    }
-  
-    .itemTile:hover {
-      transform: scale(1.2);
-    }
+  .itemTile {
+    transform: scale(0.85);
+  }
+
+  .itemTile > .itemPreview {
+    transform: scale(0.75);
+  }
+
+  .itemTile:hover {
+    transform: scale(1.2);
+  }
 }

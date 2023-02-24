@@ -7,7 +7,6 @@ import MoviesId from "../assets/MoviesId.json";
 import SeriesId from "../assets/SeriesId.json";
 
 export default function Home() {
-
   function drawSliders() {
     let array = [];
 
@@ -32,9 +31,20 @@ export default function Home() {
       );
     }
 
-    array[Math.floor(Math.random() * array.length)] = <TopSlider type="series" media_type="tv" key={Math.floor(Math.random() * 1000000000000)}/>
-    array[Math.floor(Math.random() * array.length)] = <TopSlider type="movies" media_type="movie" key={Math.floor(Math.random() * 1000000000000)}/>
-
+    array[Math.floor(Math.random() * array.length)] = (
+      <TopSlider
+        type="series"
+        media_type="tv"
+        key={Math.floor(Math.random() * 1000000000000)}
+      />
+    );
+    array[Math.floor(Math.random() * array.length)] = (
+      <TopSlider
+        type="movies"
+        media_type="movie"
+        key={Math.floor(Math.random() * 1000000000000)}
+      />
+    );
 
     return array;
   }
@@ -44,9 +54,7 @@ export default function Home() {
   return (
     <main>
       <Hero media_type="all" />
-      <MainContent>
-        {list}
-      </MainContent>
+      <MainContent>{list}</MainContent>
     </main>
   );
 }

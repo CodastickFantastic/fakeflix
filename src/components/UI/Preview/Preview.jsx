@@ -54,9 +54,15 @@ export default function Preview(props) {
             </button>
             <button className="previwFavourite">
               {checkIsFav(props.id) ? (
-                <img src={fullStar} onClick={() => removeFav(props.id, props.mediaType)} />
+                <img
+                  src={fullStar}
+                  onClick={() => removeFav(props.id, props.mediaType)}
+                />
               ) : (
-                <img src={emptyStar} onClick={() => addToFav(props.id, props.mediaType)} />
+                <img
+                  src={emptyStar}
+                  onClick={() => addToFav(props.id, props.mediaType)}
+                />
               )}
             </button>
           </div>

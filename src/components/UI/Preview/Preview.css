@@ -12,12 +12,11 @@
   z-index: 3;
 }
 
-@media (width < 500px){
-  .itemPreview{
+@media (width < 500px) {
+  .itemPreview {
     left: -35%;
   }
 }
-
 
 .itemPreview > .previewHero {
   width: 100%;
@@ -26,37 +25,35 @@
   position: relative;
 }
 
-.itemPreview > .previewHero > .previewImg{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
+.itemPreview > .previewHero > .previewImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
 }
 
-.itemPreview > .previewHero > .previewDescription{
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    color: white;
-    text-shadow: 1px 1px #1c1c1c;
+.itemPreview > .previewHero > .previewDescription {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  text-shadow: 1px 1px #1c1c1c;
 }
 
-.itemPreview > .previewHero > .previewDescription > .mediaType{
-    display: flex;
-    align-items: center;
-    font-size: 0.6rem;
+.itemPreview > .previewHero > .previewDescription > .mediaType {
+  display: flex;
+  align-items: center;
+  font-size: 0.6rem;
 }
 
-.itemPreview > .previewHero > .previewDescription > .mediaType > img{
-    width: 8px;
-    margin-right: 5px;
+.itemPreview > .previewHero > .previewDescription > .mediaType > img {
+  width: 8px;
+  margin-right: 5px;
 }
 
-
-.itemPreview > .previewHero > .previewTitle{
-    font-size: 0.8rem;
+.itemPreview > .previewHero > .previewTitle {
+  font-size: 0.8rem;
 }
-
 
 .itemPreview > .previewButtons {
   height: 25%;
@@ -64,7 +61,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 1em;
-  
 }
 
 .itemPreview > .previewButtons button {
@@ -79,8 +75,6 @@
   height: 32px;
 }
 
-.itemPreview > .previewButtons img:hover{
+.itemPreview > .previewButtons img:hover {
   transform: scale(1.3);
 }
-
-

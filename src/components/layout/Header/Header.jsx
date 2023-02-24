@@ -10,17 +10,16 @@ import SearchContext from "../../../utility/SearchContext";
 import FavouriteContext from "../../../utility/FavouriteContext";
 
 export default function Header() {
-
   //My List Handling
-  const {favourites} = useContext(FavouriteContext)
-
+  const { favourites } = useContext(FavouriteContext);
 
   //Search Event Handling
-  const {toggleSearchSection, setSearchData, searchData} = useContext(SearchContext)
+  const { toggleSearchSection, setSearchData, searchData } =
+    useContext(SearchContext);
 
   function handleSearch(event) {
-    const {value} = event.target
-    setSearchData(value)
+    const { value } = event.target;
+    setSearchData(value);
   }
 
   useEffect(() => {
@@ -40,37 +39,42 @@ export default function Header() {
     searchBtn.addEventListener("click", (event) => {
       const searchInput = document.querySelector(".searchFor");
       searchInput.classList.toggle("active");
-      toggleSearchSection()
+      toggleSearchSection();
     });
 
-      handleNavbarResponsive()
+    handleNavbarResponsive();
 
-    window.addEventListener("resize", () =>{
-      handleNavbarResponsive()
-    })
+    window.addEventListener("resize", () => {
+      handleNavbarResponsive();
+    });
   }, []);
 
-// Handling Navbar Responsivnes
-  const [mobileNav, setMobileNav] = useState(false)
-  const [showMenu, setShowMenu] = useState(false)
+  // Handling Navbar Responsivnes
+  const [mobileNav, setMobileNav] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
-  function handleNavbarResponsive(){
-    if(window.innerWidth < 940){
-      setMobileNav(true)
+  function handleNavbarResponsive() {
+    if (window.innerWidth < 940) {
+      setMobileNav(true);
     } else {
-      setMobileNav(false)
+      setMobileNav(false);
     }
   }
 
-  function handleShowMenu(){
-    setShowMenu(prev => !prev)
+  function handleShowMenu() {
+    setShowMenu((prev) => !prev);
   }
 
   return (
     <header className={mobileNav ? "mobileHeder" : "desktopHeder"}>
       <img className="logo" src={logo} alt="FakeFlix Logo" />
-      <img className="showMenu" src={require("../../../img/icons/menu.png")} alt="show menu" onClick={handleShowMenu}/>
-      <nav className={(mobileNav && showMenu) ? "active" : ""}>
+      <img
+        className="showMenu"
+        src={require("../../../img/icons/menu.png")}
+        alt="show menu"
+        onClick={handleShowMenu}
+      />
+      <nav className={mobileNav && showMenu ? "active" : ""}>
         <ul className="mainMenu">
           <li>
             <Link className="menuItem active" to="/fakeflix">

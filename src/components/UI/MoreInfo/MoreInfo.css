@@ -8,7 +8,7 @@
   align-items: center;
 }
 
-.background{
+.background {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -23,38 +23,41 @@
   background-color: #141414;
 }
 
-
-.moreInfo > .infoToShow .moreInfoHero{
-    position: relative;
-    height: 60%;
+.moreInfo > .infoToShow .moreInfoHero {
+  position: relative;
+  height: 60%;
 }
 
-.moreInfo > .infoToShow .moreInfoHero img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
-    -webkit-mask-image: linear-gradient(180deg, rgba(20,20,20,1) 70%, rgba(0,0,0,0) 100%);
+.moreInfo > .infoToShow .moreInfoHero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    rgba(20, 20, 20, 1) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
-.moreInfo > .infoToShow .moreInfoHero .moreInfoQuitBtn{
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    border: none;
-    background: #141414;
-    color: white;
-    font-size: 18px;
+.moreInfo > .infoToShow .moreInfoHero .moreInfoQuitBtn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  background: #141414;
+  color: white;
+  font-size: 18px;
 }
 
-.moreInfo > .infoToShow .moreInfoHero > .moreInfoQuitBtn:hover{
-    transform: scale(1.2);
+.moreInfo > .infoToShow .moreInfoHero > .moreInfoQuitBtn:hover {
+  transform: scale(1.2);
 }
 
 .moreInfo > .infoToShow .moreInfoHero > .moreInfoTitle {
@@ -66,7 +69,7 @@
   font-size: 2rem;
 }
 
-.moreInfoDescription{
+.moreInfoDescription {
   height: 40%;
   color: white;
   font-size: 1.2rem;
@@ -76,32 +79,31 @@
   overflow: auto;
 }
 
-.moreInfoDescription > .description{
+.moreInfoDescription > .description {
   width: 50%;
 }
 
-.moreInfoDescription > .genreSection{
+.moreInfoDescription > .genreSection {
   margin: 10px 0;
   display: flex;
   justify-content: center;
 }
 
-.moreInfoDescription > .genreSection > .genrePile{
+.moreInfoDescription > .genreSection > .genrePile {
   margin-right: 10px;
   padding: 2px;
   font-size: 0.8rem;
   border: 1px solid white;
-
 }
 
 @media (width < 900px) {
-  .moreInfoDescription > .description{
+  .moreInfoDescription > .description {
     width: 90%;
   }
 }
 
-@media (width < 940px){
-  .moreInfo > .infoToShow{
+@media (width < 940px) {
+  .moreInfo > .infoToShow {
     margin-bottom: 150px;
     height: 70%;
   }
