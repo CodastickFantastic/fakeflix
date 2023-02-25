@@ -22,11 +22,7 @@ export default function Movies() {
     }
 
     array[Math.floor(Math.random() * array.length)] = (
-      <TopSlider
-        type="movie"
-        media_type="movie"
-        key={Math.floor(Math.random() * 1000000000000)}
-      />
+      <TopSlider type="movie" media_type="movie" key={Math.floor(Math.random() * 1000000000000)} />
     );
 
     return array;

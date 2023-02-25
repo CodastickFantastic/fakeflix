@@ -18,24 +18,11 @@ export default function TopTenItem(props) {
       className="topItem"
       onMouseOver={showPreview}
       style={
-        props.place === 1
-          ? { width: 170 }
-          : props.place === 10
-          ? { width: 235 }
-          : { width: 200 }
+        props.place === 1 ? { width: 170 } : props.place === 10 ? { width: 235 } : { width: 200 }
       }
     >
-      {preview && (
-        <Preview
-          hidePreview={hidePreview}
-          id={props.id}
-          mediaType={props.mediaType}
-        />
-      )}
-      <img
-        className="number"
-        src={require("../../../img/numbers/" + props.place + ".png")}
-      />
+      {preview && <Preview hidePreview={hidePreview} id={props.id} mediaType={props.mediaType} />}
+      <img className="number" src={require("../../../img/numbers/" + props.place + ".png")} />
       <img
         className="poster"
         src={"https://image.tmdb.org/t/p/original" + props.poster}

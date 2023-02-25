@@ -22,11 +22,7 @@ export default function TvSeries() {
     }
 
     array[Math.floor(Math.random() * array.length)] = (
-      <TopSlider
-        type="series"
-        media_type="tv"
-        key={Math.floor(Math.random() * 1000000000000)}
-      />
+      <TopSlider type="series" media_type="tv" key={Math.floor(Math.random() * 1000000000000)} />
     );
 
     return array;
