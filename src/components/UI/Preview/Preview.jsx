@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import MoreInfoContext from "../../../utility/MoreInfoContext";
+import MoreInfoContext from "../../../contexts/MoreInfoContext";
 
 //CSS Importing
 import "./Preview.css";
@@ -11,13 +11,13 @@ import emptyStar from "../../../img/icons/empty_star.png";
 import fullStar from "../../../img/icons/full_star.png";
 import moreInfoImg from "../../../img/icons/info.png";
 import netflixPoster from "../../../img/netflix_poster.png";
-import FavouriteContext from "../../../utility/FavouriteContext";
+import FavouriteContext from "../../../contexts/FavouriteContext";
 
 export default function Preview(props) {
   const [data, setData] = useState();
 
   const { displayMoreInfo } = useContext(MoreInfoContext);
-  const { addToFav, checkIsFav, removeFav } = useContext(FavouriteContext);
+  const { addToFav, isFav, removeFav } = useContext(FavouriteContext);
 
   useEffect(() => {
     fetch(
@@ -38,10 +38,11 @@ export default function Preview(props) {
                 ? `https://image.tmdb.org/t/p/w500${data.backdrop_path}`
                 : netflixPoster
             }
+            alt="alt TODO"
           />
           <div className="previewDescription">
             <div className="mediaType">
-              <img src={N} />
+              <img src={N} alt="alt TODO" />
               {props.mediaType === "tv" ? "SERIES" : "MOVIE"}
             </div>
             <h3 className="previewTitle">{data.title || data.name}</h3>
@@ -50,28 +51,21 @@ export default function Preview(props) {
         <div className="previewButtons">
           <div>
             <button className="previewPlay">
-              <img src={playBtn} />
+              <img src={playBtn} alt="alt TODO" />
             </button>
             <button className="previwFavourite">
-              {checkIsFav(props.id) ? (
-                <img
-                  src={fullStar}
-                  onClick={() => removeFav(props.id, props.mediaType)}
-                />
+              {isFav(props.id) ? (
+                <img src={fullStar} onClick={() => removeFav(props.id, props.mediaType)} />
               ) : (
-                <img
-                  src={emptyStar}
-                  onClick={() => addToFav(props.id, props.mediaType)}
-                />
+                <img src={emptyStar} onClick={() => addToFav(props.id, props.mediaType)} />
               )}
             </button>
           </div>
           <button className="moreInfoBtn">
             <img
               src={moreInfoImg}
-              onClick={() => {
-                displayMoreInfo(props.id, props.mediaType);
-              }}
+              alt="info icon"
+              onClick={() => displayMoreInfo(props.id, props.mediaType)}
             />
           </button>
         </div>

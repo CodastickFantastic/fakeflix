@@ -1,26 +1,26 @@
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../../../img/netflix-logo.png";
 import search from "../../../img/icons/search.png";
 import avatar from "../../../img/avatar-1.jpg";
 
+import SearchContext from "../../../contexts/SearchContext";
+import FavouriteContext from "../../../contexts/FavouriteContext";
+
 import "./Header.css";
-import { useContext, useEffect, useState } from "react";
-import SearchContext from "../../../utility/SearchContext";
-import FavouriteContext from "../../../utility/FavouriteContext";
+import SearchSection from "../../UI/SearchSection/SearchSection";
 
 export default function Header() {
+  // Handling Navbar Responsivnes
+  const [mobileNav, setMobileNav] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+
   //My List Handling
   const { favourites } = useContext(FavouriteContext);
 
   //Search Event Handling
-  const { toggleSearchSection, setSearchData, searchData } =
-    useContext(SearchContext);
-
-  function handleSearch(event) {
-    const { value } = event.target;
-    setSearchData(value);
-  }
+  const { searchFor, toggleSearchSection, setSearchData, searchData } = useContext(SearchContext);
 
   useEffect(() => {
     // Navigation Change Effect
@@ -49,21 +49,13 @@ export default function Header() {
     });
   }, []);
 
-  // Handling Navbar Responsivnes
-  const [mobileNav, setMobileNav] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
-
-  function handleNavbarResponsive() {
+  const handleNavbarResponsive = () => {
     if (window.innerWidth < 940) {
       setMobileNav(true);
     } else {
       setMobileNav(false);
     }
-  }
-
-  function handleShowMenu() {
-    setShowMenu((prev) => !prev);
-  }
+  };
 
   return (
     <header className={mobileNav ? "mobileHeder" : "desktopHeder"}>
@@ -72,8 +64,9 @@ export default function Header() {
         className="showMenu"
         src={require("../../../img/icons/menu.png")}
         alt="show menu"
-        onClick={handleShowMenu}
+        onClick={() => setShowMenu((prev) => !prev)}
       />
+
       <nav className={mobileNav && showMenu ? "active" : ""}>
         <ul className="mainMenu">
           <li>
@@ -93,29 +86,29 @@ export default function Header() {
           </li>
           <li>
             <Link className="menuItem" to="/my-list">
-              My List{favourites !== 0 && ` ( ${favourites.length} )`}
+              My List ( {favourites.length} )
             </Link>
           </li>
         </ul>
       </nav>
+
       <div className="searchDiv">
-        <img
-          className="searchImg"
-          src={search}
-          alt="Search for Series, Movie or Actor"
-        />
+        <img className="searchImg" src={search} alt="Search for Series, Movie or Actor" />
         <input
           className="searchFor"
           type="text"
           placeholder="Search For..."
-          onChange={handleSearch}
+          onChange={({ target: { value } }) => setSearchData(value)}
           name="searchFor"
           value={searchData}
         />
       </div>
+
       <div className="profile">
         <img className="avatar" src={avatar} alt="My profile" />
       </div>
+
+      {searchFor && <SearchSection toSearch={searchData} />}
     </header>
   );
 }

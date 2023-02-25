@@ -6,9 +6,9 @@ import Header from "./components/layout/Header/Header";
 import Movies from "./pages/Movies";
 import MyList from "./pages/MyList";
 
-import { FavouriteProvider } from "./utility/FavouriteContext";
-import { MoreInfoProvider } from "./utility/MoreInfoContext";
-import { SearchContextProvider } from "./utility/SearchContext";
+import { FavouriteProvider } from "./contexts/FavouriteContext";
+import { MoreInfoProvider } from "./contexts/MoreInfoContext";
+import { SearchContextProvider } from "./contexts/SearchContext";
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import MoreInfoContext from "../../../utility/MoreInfoContext";
+import MoreInfoContext from "../../../contexts/MoreInfoContext";
 
 //Importing CSS
 import "./Hero.css";
@@ -30,10 +30,7 @@ export default function Hero(props) {
   return (
     data && (
       <section className="hero">
-        <img
-          src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
-          alt="hero"
-        />
+        <img src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`} alt="hero" />
         <div className="textContainer">
           <div className="mediaType">
             <img src={N} />

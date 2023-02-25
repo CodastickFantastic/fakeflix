@@ -32,18 +32,10 @@ export default function Home() {
     }
 
     array[Math.floor(Math.random() * array.length)] = (
-      <TopSlider
-        type="series"
-        media_type="tv"
-        key={Math.floor(Math.random() * 1000000000000)}
-      />
+      <TopSlider type="series" media_type="tv" key={Math.floor(Math.random() * 1000000000000)} />
     );
     array[Math.floor(Math.random() * array.length)] = (
-      <TopSlider
-        type="movies"
-        media_type="movie"
-        key={Math.floor(Math.random() * 1000000000000)}
-      />
+      <TopSlider type="movies" media_type="movie" key={Math.floor(Math.random() * 1000000000000)} />
     );
 
     return array;
