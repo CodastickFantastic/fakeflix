@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import "./MoreInfo.css";
 
 //Importing Images
-import netflixPoster from "../../../img/netflix_poster.png";
+import netflixPoster from "assets/images/netflix_poster.png";
 
 export default function MoreInfo(props) {
   const [data, setData] = useState();

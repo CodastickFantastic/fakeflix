@@ -1,93 +1,104 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-import logo from "../../../img/netflix-logo.png";
-import search from "../../../img/icons/search.png";
-import avatar from "../../../img/avatar-1.jpg";
+import logo from "assets/images/netflix-logo.png";
+import search from "assets/images/icons/search.png";
+import avatar from "assets/images/avatar-1.jpg";
+import burgerMenuIcon from "assets/images/icons/menu.png";
 
-import SearchContext from "../../../contexts/SearchContext";
-import FavouriteContext from "../../../contexts/FavouriteContext";
+import SearchContext from "contexts/SearchContext";
+import FavouriteContext from "contexts/FavouriteContext";
 
 import "./Header.css";
-import SearchSection from "../../UI/SearchSection/SearchSection";
+import SearchSection from "components/UI/SearchSection/SearchSection";
 
 export default function Header() {
   // Handling Navbar Responsivnes
-  const [mobileNav, setMobileNav] = useState(false);
+  // const [mobileNav, setMobileNav] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
   //My List Handling
   const { favourites } = useContext(FavouriteContext);
 
   //Search Event Handling
-  const { searchFor, toggleSearchSection, setSearchData, searchData } = useContext(SearchContext);
+  const { setSearchData, searchData } = useContext(SearchContext);
 
   useEffect(() => {
     // Navigation Change Effect
-    const menuBtn = Array.from(document.getElementsByClassName("menuItem"));
+    // const menuBtn = Array.from(document.getElementsByClassName("menuItem"));
 
-    menuBtn.forEach((button) => {
-      button.addEventListener("click", () => {
-        menuBtn.forEach((button) => button.classList.remove("active"));
-        button.classList.add("active");
-      });
-    });
+    // menuBtn.forEach((button) => {
+    //   button.addEventListener("click", () => {
+    //     menuBtn.forEach((button) => button.classList.remove("active"));
+    //     button.classList.add("active");
+    //   });
+    // });
 
     //Show Search BTN
     const searchBtn = document.querySelector(".searchImg");
-
-    searchBtn.addEventListener("click", (event) => {
+    searchBtn.addEventListener("click", () => {
       const searchInput = document.querySelector(".searchFor");
       searchInput.classList.toggle("active");
-      toggleSearchSection();
-    });
-
-    handleNavbarResponsive();
-
-    window.addEventListener("resize", () => {
-      handleNavbarResponsive();
+      searchInput.focus();
     });
   }, []);
 
-  const handleNavbarResponsive = () => {
-    if (window.innerWidth < 940) {
-      setMobileNav(true);
-    } else {
-      setMobileNav(false);
-    }
-  };
+  // https://javascript.info/bubbling-and-capturing
+  // useEffect(() => {
+  //   const ul = document.querySelector(".mainMenu");
+  //   ul.addEventListener("click", (ev) => {
+  //     if (ev.target.tagName === "A") {
+  //       ev.target.classList.add("sdssssssssssssssssssss");
+  //     }
+  //   });
+  // }, []);
 
   return (
-    <header className={mobileNav ? "mobileHeder" : "desktopHeder"}>
+    // <header className={mobileNav ? "mobileHeder" : "desktopHeder"}>
+    <header className={"desktopHeder"}>
       <img className="logo" src={logo} alt="FakeFlix Logo" />
       <img
         className="showMenu"
-        src={require("../../../img/icons/menu.png")}
+        src={burgerMenuIcon}
         alt="show menu"
-        onClick={() => setShowMenu((prev) => !prev)}
+        onClick={() => setShowMenu(!showMenu)}
+        // onClick={() => setShowMenu((prev) => !prev)}
       />
 
-      <nav className={mobileNav && showMenu ? "active" : ""}>
+      {/* <nav className={mobileNav && showMenu ? "active" : ""}> */}
+      <nav className={showMenu ? "active" : ""}>
         <ul className="mainMenu">
           <li>
-            <Link className="menuItem active" to="/fakeflix">
+            <NavLink
+              className={({ isActive }) => `menuItem ${isActive ? "active" : ""}`}
+              to="/fakeflix"
+            >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="menuItem" to="/series">
+            <NavLink
+              className={({ isActive }) => `menuItem ${isActive ? "active" : ""}`}
+              to="/series"
+            >
               TV Series
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="menuItem" to="/movies">
+            <NavLink
+              className={({ isActive }) => `menuItem ${isActive ? "active" : ""}`}
+              to="/movies"
+            >
               Movies
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="menuItem" to="/my-list">
+            <NavLink
+              className={({ isActive }) => `menuItem ${isActive ? "active" : ""}`}
+              to="/my-list"
+            >
               My List ( {favourites.length} )
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>
@@ -97,10 +108,11 @@ export default function Header() {
         <input
           className="searchFor"
           type="text"
-          placeholder="Search For..."
+          placeholder="Search For...."
           onChange={({ target: { value } }) => setSearchData(value)}
           name="searchFor"
           value={searchData}
+          autoFocus={true}
         />
       </div>
 
@@ -108,7 +120,7 @@ export default function Header() {
         <img className="avatar" src={avatar} alt="My profile" />
       </div>
 
-      {searchFor && <SearchSection toSearch={searchData} />}
+      {searchData.length > 0 && <SearchSection toSearch={searchData} />}
     </header>
   );
 }

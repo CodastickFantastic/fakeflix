@@ -5,12 +5,12 @@ import MoreInfoContext from "../../../contexts/MoreInfoContext";
 import "./Preview.css";
 
 // Icons Importing
-import N from "../../../img/n.png";
-import playBtn from "../../../img/icons/play.png";
-import emptyStar from "../../../img/icons/empty_star.png";
-import fullStar from "../../../img/icons/full_star.png";
-import moreInfoImg from "../../../img/icons/info.png";
-import netflixPoster from "../../../img/netflix_poster.png";
+import N from "assets/images/n.png";
+import playBtn from "assets/images/icons/play.png";
+import emptyStar from "assets/images/icons/empty_star.png";
+import fullStar from "assets/images/icons/full_star.png";
+import moreInfoImg from "assets/images/icons/info.png";
+import netflixPoster from "assets/images/netflix_poster.png";
 import FavouriteContext from "../../../contexts/FavouriteContext";
 
 export default function Preview(props) {

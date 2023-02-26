@@ -5,34 +5,27 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { useEffect, useState } from "react";
 import ItemTile from "../ItemTile/ItemTile";
+import { myFetch } from "utils";
 
-export default function CasualSlider(props) {
-  const [data, setData] = useState();
+export default function CasualSlider({ media_type, genre_id, type }) {
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/discover/${props.media_type}?api_key=18f5bf837784bc2be97b452a18de806d&with_genres=${props.genre_id}`
-    )
-      .then((response) => response.json())
-      .then((data) => showData(data.results));
-
-    function showData(data) {
+    myFetch(`/discover/${media_type}`, `&with_genres=${genre_id}`).then(({ results }) => {
       setData(
-        data.map((item) => {
-          return (
-            <SwiperSlide key={item.id}>
-              <ItemTile id={item.id} mediaType={props.media_type} />
-            </SwiperSlide>
-          );
-        })
+        results?.map((item) => (
+          <SwiperSlide key={item.id}>
+            <ItemTile id={item.id} mediaType={media_type} />
+          </SwiperSlide>
+        )) ?? []
       );
-    }
-  }, []);
+    });
+  }, [media_type, genre_id]);
 
   return (
-    data && (
+    data?.length > 0 && (
       <section className="sliderSection casualSlider">
-        <h3>{props.type}</h3>
+        <h3>{type}</h3>
         <Swiper
           slidesPerView={2}
           loop={true}

@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import ItemTile from "../components/UI/ItemTile/ItemTile";
-import Preview from "../components/UI/Preview/Preview";
 import FavouriteContext from "../contexts/FavouriteContext";
 
 import "./MyList.css";

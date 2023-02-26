@@ -1,5 +1,5 @@
 import "./MainContent.css";
 
-export default function MainContent(props) {
-  return <div className="mainContent">{props.children}</div>;
+export default function MainContent({ children }) {
+  return <div className="mainContent">{children}</div>;
 }

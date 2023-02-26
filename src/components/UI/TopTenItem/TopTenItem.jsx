@@ -22,7 +22,7 @@ export default function TopTenItem(props) {
       }
     >
       {preview && <Preview hidePreview={hidePreview} id={props.id} mediaType={props.mediaType} />}
-      <img className="number" src={require("../../../img/numbers/" + props.place + ".png")} />
+      <img className="number" src={require("assets/images/numbers/" + props.place + ".png")} />
       <img
         className="poster"
         src={"https://image.tmdb.org/t/p/original" + props.poster}

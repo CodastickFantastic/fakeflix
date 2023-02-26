@@ -1,55 +1,49 @@
 import { useState, useEffect, useContext } from "react";
-import MoreInfoContext from "../../../contexts/MoreInfoContext";
+import MoreInfoContext from "contexts/MoreInfoContext";
 
 //Importing CSS
 import "./Hero.css";
 
 //Importing Images
-import playIcon from "../../../img/icons/play.png";
-import infoIcon from "../../../img/icons/info.png";
-import N from "../../../img/n.png";
+import playIcon from "assets/images/icons/play.png";
+import infoIcon from "assets/images/icons/info.png";
+import netflixN from "assets/images/n.png";
+import { myFetch, randomNumber } from "utils";
 
-export default function Hero(props) {
-  const [data, setData] = useState();
-
+export default function Hero({ media_type }) {
+  const [data, setData] = useState({});
   const { displayMoreInfo } = useContext(MoreInfoContext);
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/trending/${props.media_type}/week?api_key=18f5bf837784bc2be97b452a18de806d`
-    )
-      .then((response) => response.json())
-      .then((data) => pickRandomData(data.results));
-
-    function pickRandomData(data) {
-      let randomNumber = Math.floor(Math.random() * data.length);
-      setData(data[randomNumber]);
-    }
-  }, []);
+    myFetch("/trending/all/week").then(({ results }) =>
+      setData(results[randomNumber(results.length)] ?? {})
+    );
+  }, [media_type]);
 
   return (
-    data && (
+    Object.keys(data)?.length > 0 && (
       <section className="hero">
-        <img src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`} alt="hero" />
+        <img
+          src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
+          height="700"
+          alt="hero"
+        />
         <div className="textContainer">
           <div className="mediaType">
-            <img src={N} />
-            {data.media_type === "tv" ? "SERIES" : "MOVIE"}
+            <img src={netflixN} alt="netflis's n letter" />
+            {data.media_type === "tv" ? "TV SERIES" : "MOVIE"}
           </div>
+
           <h2 className="heroTitle">{data.title || data.name}</h2>
+
           <p className="shortDescription">{data.overview}</p>
           <div className="heroButtons">
             <button className="playBtn">
-              <img src={playIcon} />
+              <img src={playIcon} alt="play icon" />
               Play
             </button>
-            <button
-              className="infoBtn"
-              onClick={() => {
-                displayMoreInfo(data.id, data.media_type);
-              }}
-            >
-              <img src={infoIcon} />
+            <button className="infoBtn" onClick={() => displayMoreInfo(data.id, data.media_type)}>
+              <img src={infoIcon} alt="info icon" />
               More info
             </button>
           </div>

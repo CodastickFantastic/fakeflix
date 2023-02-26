@@ -3,50 +3,68 @@ import MainContent from "../components/layout/MainContent/MainContent";
 import TopSlider from "../components/UI/Sliders/TopSlider";
 import CasualSlider from "../components/UI/Sliders/CasualSlider";
 
-import MoviesId from "../assets/MoviesId.json";
-import SeriesId from "../assets/SeriesId.json";
+import moviesGenresList from "../assets/MoviesId.json";
+import tvShowsGenresList from "../assets/SeriesId.json";
+import { randomNoRepeats } from "utils";
 
-export default function Home() {
-  function drawSliders() {
-    let array = [];
+const numOfSliders = 6;
+const randMoviesGenres = randomNoRepeats(moviesGenresList);
+const randTvShowsGenres = randomNoRepeats(tvShowsGenresList);
 
-    for (let i = 0; i < 5; i++) {
-      let ranMovieLength = Math.floor(Math.random() * MoviesId.length);
-      let ranSeriesLength = Math.floor(Math.random() * SeriesId.length);
-      array.push(
-        <CasualSlider
-          type={MoviesId[ranMovieLength].name}
-          genre_id={MoviesId[ranMovieLength].id}
-          media_type="movie"
-          key={Math.floor(Math.random() * 1000000000000)}
-        />
-      );
-      array.push(
-        <CasualSlider
-          type={SeriesId[ranSeriesLength].name}
-          genre_id={SeriesId[ranSeriesLength].id}
-          media_type="tv"
-          key={Math.floor(Math.random() * 1000000000000)}
-        />
-      );
+const drawSliders = () => {
+  let array = [];
+
+  array[0] = <TopSlider type="movies" media_type="movie" key="TopSlider movies" />;
+  array[numOfSliders] = <TopSlider type="series" media_type="tv" key="TopSlider tv series" />;
+
+  for (let i = 0; i < numOfSliders; i++) {
+    let { id: movieId, name: movieName } = randMoviesGenres();
+    let { id: tvSeriesId, name: tvSeriesName } = randTvShowsGenres();
+
+    if (i === 0 || i === numOfSliders) {
+      continue;
     }
 
-    array[Math.floor(Math.random() * array.length)] = (
-      <TopSlider type="series" media_type="tv" key={Math.floor(Math.random() * 1000000000000)} />
-    );
-    array[Math.floor(Math.random() * array.length)] = (
-      <TopSlider type="movies" media_type="movie" key={Math.floor(Math.random() * 1000000000000)} />
+    array[i] = (
+      <CasualSlider
+        type={movieName}
+        genre_id={movieId}
+        media_type="movie"
+        key={"movie_genre" + movieId}
+      />
     );
 
-    return array;
+    array[i + numOfSliders] = (
+      <CasualSlider
+        type={tvSeriesName}
+        genre_id={tvSeriesId}
+        media_type="tv"
+        key={"tvShow_genre" + tvSeriesId}
+      />
+    );
   }
+  return array;
+};
 
-  let list = drawSliders();
-
+const Home = () => {
   return (
-    <main>
+    <>
       <Hero media_type="all" />
-      <MainContent>{list}</MainContent>
-    </main>
+      <MainContent>{drawSliders()}</MainContent>
+
+      {/* <MainContent>
+        <TopSlider type="movies" media_type="movie" key="TopSlider movies" />
+        {moviesGenresList.map(({ name, id }) => (
+          <CasualSlider type={name} genre_id={id} media_type="movie" key={id} />
+        ))}
+
+        <TopSlider type="series" media_type="tv" key="TopSlider tv series" />
+        {moviesGenresList.map(({ name, id }) => (
+          <CasualSlider type={name} genre_id={id} media_type="movie" key={id} />
+        ))}
+      </MainContent> */}
+    </>
   );
-}
+};
+
+export default Home;

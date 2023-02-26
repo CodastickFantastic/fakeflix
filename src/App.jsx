@@ -9,27 +9,27 @@ import MyList from "./pages/MyList";
 import { FavouriteProvider } from "./contexts/FavouriteContext";
 import { MoreInfoProvider } from "./contexts/MoreInfoContext";
 import { SearchContextProvider } from "./contexts/SearchContext";
+import { Footer } from "components/UI/Footer";
 
-function App() {
-  return (
-    <BrowserRouter>
-      <FavouriteProvider>
-        <MoreInfoProvider>
-          <SearchContextProvider>
-            <Header />
-            <div className="isMobile">
-              <Routes>
-                <Route path="/fakeflix" element={<Home />} />
-                <Route path="/series" element={<TvSeries />} />
-                <Route path="/movies" element={<Movies />} />
-                <Route path="/my-list" element={<MyList />} />
-              </Routes>
-            </div>
-          </SearchContextProvider>
-        </MoreInfoProvider>
-      </FavouriteProvider>
-    </BrowserRouter>
-  );
-}
+const App = () => (
+  <BrowserRouter>
+    <FavouriteProvider>
+      <MoreInfoProvider>
+        <SearchContextProvider>
+          <Header />
+          <main className="main">
+            <Routes>
+              <Route path="/fakeflix" element={<Home />} />
+              <Route path="/series" element={<TvSeries />} />
+              <Route path="/movies" element={<Movies />} />
+              <Route path="/my-list" element={<MyList />} />
+            </Routes>
+          </main>
+          <Footer />
+        </SearchContextProvider>
+      </MoreInfoProvider>
+    </FavouriteProvider>
+  </BrowserRouter>
+);
 
 export default App;

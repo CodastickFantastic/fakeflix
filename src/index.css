@@ -10,7 +10,7 @@ body {
 }
 
 @media (width < 940px) {
-  .isMobile {
+  .main {
     margin-top: 142px;
   }
 }

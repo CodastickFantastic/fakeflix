@@ -31,9 +31,9 @@ export default function Movies() {
   let list = drawSliders();
 
   return (
-    <main>
+    <>
       <Hero media_type="movie" />
       <MainContent>{list}</MainContent>
-    </main>
+    </>
   );
 }
