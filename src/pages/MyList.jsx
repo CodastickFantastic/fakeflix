@@ -1,9 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import ItemTile from "../components/UI/ItemTile/ItemTile";
-import Preview from "../components/UI/Preview/Preview";
-import FavouriteContext from "../utility/FavouriteContext";
+import FavouriteContext from "../contexts/FavouriteContext";
 
-import "./MyList.css"
+import "./MyList.css";
 
 export default function MyList() {
   let [favDisplay, setFavDisplay] = useState();
@@ -12,7 +11,7 @@ export default function MyList() {
   useEffect(() => {
     setFavDisplay(
       favourites.map((favItem) => {
-        return <ItemTile mediaType={favItem.mediaType} id={favItem.id} key={favItem.id}/>;
+        return <ItemTile mediaType={favItem.mediaType} id={favItem.id} key={favItem.id} />;
       })
     );
   }, [favourites]);

@@ -1,17 +1,16 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    background-color: #141414;
-    font-family: Arial, Helvetica, sans-serif;
+body {
+  background-color: #141414;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media(width < 940px) {
-    .isMobile{
-        margin-top: 142px;
-    }
-    
+@media (width < 940px) {
+  .main {
+    margin-top: 142px;
+  }
 }

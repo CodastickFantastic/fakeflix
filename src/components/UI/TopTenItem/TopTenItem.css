@@ -1,14 +1,14 @@
-.topItem{
-    height: 150px;
-    position: relative;
+.topItem {
+  height: 150px;
+  position: relative;
 }
 
-.topItem > .number{
-    height: 150px;
-    object-fit: contain;
+.topItem > .number {
+  height: 150px;
+  object-fit: contain;
 }
 
-.topItem > .poster{
-    height: 150px;
-    object-fit: contain;
+.topItem > .poster {
+  height: 150px;
+  object-fit: contain;
 }

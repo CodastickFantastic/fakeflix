@@ -1,4 +1,4 @@
-.sliderSection{
+.sliderSection {
   width: 100%;
   overflow: visible;
 }
@@ -17,7 +17,7 @@
   overflow: visible;
 }
 
-.sliderSection > .swiper > div[class*="button"]{
+.sliderSection > .swiper > div[class*="button"] {
   height: 80%;
   width: 50px;
   top: 1.3em;
@@ -26,29 +26,24 @@
   opacity: 0;
 }
 
-.sliderSection > .swiper > .swiper-button-prev{
+.sliderSection > .swiper > .swiper-button-prev {
   left: 0;
 }
 
-.sliderSection > .swiper > .swiper-button-next{
+.sliderSection > .swiper > .swiper-button-next {
   right: 0;
 }
 
-.sliderSection > .swiper:hover > div[class*="button"]{
+.sliderSection > .swiper:hover > div[class*="button"] {
   opacity: 1;
 }
 
-.sliderSection > .swiper > div[class*="button"]:hover{
+.sliderSection > .swiper > div[class*="button"]:hover {
   background-color: rgba(74, 74, 74, 0.715);
 }
 
-@media(width < 600px){
-  .sliderSection > .swiper > div[class*="button"]{
+@media (width < 600px) {
+  .sliderSection > .swiper > div[class*="button"] {
     display: none;
   }
 }
-
-
-
-
-

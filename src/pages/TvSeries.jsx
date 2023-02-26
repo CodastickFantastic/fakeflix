@@ -3,38 +3,39 @@ import MainContent from "../components/layout/MainContent/MainContent";
 import TopSlider from "../components/UI/Sliders/TopSlider";
 import CasualSlider from "../components/UI/Sliders/CasualSlider";
 
-import SeriesId from "../assets/SeriesId.json";
+import tvShowsGenresList from "../assets/SeriesId.json";
+import { randomNoRepeats } from "utils";
 
-export default function TvSeries() {
+const randTvShowsGenres = randomNoRepeats(tvShowsGenresList);
 
-  function drawSliders() {
-    let array = [];
+const drawSliders = () => {
+  let array = [];
 
-    for (let i = 0; i < 9; i++) {
-      let ranSeriesLength = Math.floor(Math.random() * SeriesId.length);
-      array.push(
-        <CasualSlider
-          type={SeriesId[ranSeriesLength].name}
-          genre_id={SeriesId[ranSeriesLength].id}
-          media_type="tv"
-          key={Math.floor(Math.random() * 1000000000000)}
-        />
-      );
-    }
+  array[0] = (
+    <TopSlider type="series" media_type="tv" key={Math.floor(Math.random() * 1000000000000)} />
+  );
 
-    array[Math.floor(Math.random() * array.length)] = <TopSlider type="series" media_type="tv" key={Math.floor(Math.random() * 1000000000000)}/>
-    
-    return array;
+  for (let i = 1; i < 11; i++) {
+    let { id: tvSeriesId, name: tvSeriesName } = randTvShowsGenres();
+
+    array.push(
+      <CasualSlider
+        type={tvSeriesName}
+        genre_id={tvSeriesId}
+        media_type="tv"
+        key={"tvShow_genre" + tvSeriesId}
+      />
+    );
   }
 
-  let list = drawSliders();
+  return array;
+};
 
+export default function TvSeries() {
   return (
-    <main>
+    <>
       <Hero media_type="tv" />
-      <MainContent>
-        {list}
-      </MainContent>
-    </main>
+      <MainContent>{drawSliders()}</MainContent>
+    </>
   );
 }

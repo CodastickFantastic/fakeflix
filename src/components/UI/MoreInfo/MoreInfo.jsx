@@ -1,10 +1,10 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 
 //Importing CSS
 import "./MoreInfo.css";
 
 //Importing Images
-import netflixPoster from "../../../img/netflix_poster.png";
+import netflixPoster from "assets/images/netflix_poster.png";
 
 export default function MoreInfo(props) {
   const [data, setData] = useState();
@@ -29,6 +29,7 @@ export default function MoreInfo(props) {
                   ? `https://image.tmdb.org/t/p/original${data.backdrop_path}`
                   : netflixPoster
               }
+              alt="poster"
             />
             <button className="moreInfoQuitBtn" onClick={props.quit}>
               X

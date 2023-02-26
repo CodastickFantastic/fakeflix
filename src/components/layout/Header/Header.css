@@ -9,11 +9,7 @@
   top: 0;
   left: 0;
   z-index: 2;
-  background: linear-gradient(
-    180deg,
-    rgba(20, 20, 20, 1) 10%,
-    rgba(113, 235, 242, 0) 100%
-  );
+  background: linear-gradient(180deg, rgba(20, 20, 20, 1) 10%, rgba(113, 235, 242, 0) 100%);
 }
 
 .desktopHeder .logo {
@@ -23,7 +19,7 @@
   object-fit: contain;
 }
 
-.desktopHeder .showMenu{
+.desktopHeder .showMenu {
   display: none;
 }
 
@@ -93,83 +89,80 @@
 }
 
 /* Mobile Heder Styling */
+@media (max-width: 940px) {
+  .desktopHeder {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-.mobileHeder{
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: #1c1c1c;
+  }
 
+  .desktopHeder .logo {
+    width: 120px;
+    margin: 10px auto auto auto;
+  }
 
+  .desktopHeder .showMenu {
+    width: 40px;
+    margin-top: 10px;
+    display: unset;
+  }
 
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 99;
-  background-color: #1c1c1c;
+  .desktopHeder nav {
+    display: none;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .desktopHeder nav.active {
+    display: block;
+  }
+
+  .desktopHeder nav ul li {
+    margin: 5px 0;
+  }
+
+  .desktopHeder nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  .desktopHeder .searchDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    margin: 10px auto auto auto;
+    width: 90%;
+  }
+
+  .desktopHeder .searchDiv .searchImg {
+    width: 40px;
+  }
+
+  .desktopHeder .searchDiv .searchFor {
+    height: 0;
+    width: 100%;
+    border: none;
+    transition: 0.2s linear;
+    text-align: center;
+  }
+
+  .desktopHeder .searchDiv .searchFor.active {
+    height: 50px;
+    width: 100%;
+  }
+
+  .desktopHeder .avatar {
+    display: none;
+  }
 }
-
-.mobileHeder .logo{
-  width: 120px;
-  margin-top: 10px;
-}
-
-.mobileHeder .showMenu{
-  width: 40px;
-  margin-top: 10px;
-}
-
-.mobileHeder nav{
-  display: none;
-  text-align: center;
-  width: 100%;
-  margin-top: 10px;
-}
-
-.mobileHeder nav.active{
-  display: block;
-}
-
-.mobileHeder nav ul li{
-  margin: 5px 0;
-}
-
-.mobileHeder nav ul li a{
-  text-decoration: none;
-  color: white;
-  font-size: 1.2rem;
-  
-}
-
-.mobileHeder .searchDiv {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
-  width: 90%;
-}
-
-.mobileHeder .searchDiv .searchImg{
-  width: 40px;
-}
-
-.mobileHeder .searchDiv .searchFor{
-  height: 0;
-  width: 100%;
-  border: none;
-  transition: 0.2s linear;
-  text-align: center;
-}
-
-.mobileHeder .searchDiv .searchFor.active{
-  height: 50px;
-  width: 100%;
-}
-
-
-.mobileHeder .avatar{
-  display: none;
-}
-
-

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import TopTenItem from "../TopTenItem/TopTenItem";
 
-
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -55,13 +54,38 @@ export default function TopSlider(props) {
         navigation
         centeredSlides
         breakpoints={{
-          1900:{slidesPerView:8, slidesOffsetBefore: 70, centeredSlides: false},
-          1400:{slidesPerView:6, slidesOffsetBefore: 70 ,centeredSlides: false},
-          1100:{slidesPerView:5, slidesOffsetBefore: 70, centeredSlides: false},
-          850:{slidesPerView:4, slidesOffsetBefore: 60, centeredSlides: false},
-          600:{slidesPerView:3, slidesOffsetBefore: 50, centeredSlides: false},
-          100:{slidesPerView: 2, allowTouchMove: true, spaceBetween: 100,  slidesOffsetBefore: -20}
-          }}
+          1900: {
+            slidesPerView: 8,
+            slidesOffsetBefore: 70,
+            centeredSlides: false,
+          },
+          1400: {
+            slidesPerView: 6,
+            slidesOffsetBefore: 70,
+            centeredSlides: false,
+          },
+          1100: {
+            slidesPerView: 5,
+            slidesOffsetBefore: 70,
+            centeredSlides: false,
+          },
+          850: {
+            slidesPerView: 4,
+            slidesOffsetBefore: 60,
+            centeredSlides: false,
+          },
+          600: {
+            slidesPerView: 3,
+            slidesOffsetBefore: 50,
+            centeredSlides: false,
+          },
+          100: {
+            slidesPerView: 2,
+            allowTouchMove: true,
+            spaceBetween: 100,
+            slidesOffsetBefore: -20,
+          },
+        }}
       >
         {topViwesData}
       </Swiper>
